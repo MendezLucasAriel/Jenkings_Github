@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'cd PracticaJenkins\dist\PracticaJenkins'
-		sh 'echo "kill yourself"'
+                bat 'cd PracticaJenkins\dist\PracticaJenkins'
+		bat 'echo "kill yourself"'
             }
         }
     }
