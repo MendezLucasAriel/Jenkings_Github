@@ -6,6 +6,7 @@ pipeline {
         stage('build') {
             steps {
                 bat 'cd PracticaJenkins\dist\PracticaJenkins'
+		bat 'java -jar PracticaJenkins.jar'
 		bat 'echo "kill yourself"'
             }
         }
