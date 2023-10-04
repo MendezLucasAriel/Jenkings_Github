@@ -15,7 +15,7 @@ pipeline {
                         
                         // Imprime el número actual.
                         echo "Número: $count"
-                        
+                        echo "bomba"
                         // Espera 1 minuto antes de la próxima iteración.
                         sleep(time: 60, unit: 'SECONDS')
                     }
