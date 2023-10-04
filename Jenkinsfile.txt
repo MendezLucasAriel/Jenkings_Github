@@ -5,8 +5,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat 'cd PracticaJenkins\dist\PracticaJenkins'
-		bat 'java -jar PracticaJenkins.jar'
+		def jarFile = 'PracticaJenkins\dist\PracticaJenkins\PracticaJenkins.jar'
+   
+ 		sh "java -jar ${jarFile}"
 		bat 'echo "kill yourself"'
             }
         }
