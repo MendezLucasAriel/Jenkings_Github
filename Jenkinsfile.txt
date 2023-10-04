@@ -1,25 +1,13 @@
+Jenkinsfile (Declarative Pipeline)
+/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent any
-
+    agent { docker { image 'maven:3.9.4-eclipse-temurin-17-alpine' } }
     stages {
-        stage('Incrementar cada minuto') {
+        stage('build') {
             steps {
-                script {
-                    // Inicializa una variable para contar.
-                    def count = 0
-
-                    // Ejecuta un bucle infinito.
-                    while (true) {
-                        // Incrementa el contador en 1.
-                        count++
-                        
-                        // Imprime el número actual.
-                        echo "Número: $count"
-                        echo "bomba"
-                        // Espera 1 minuto antes de la próxima iteración.
-                        sleep(time: 60, unit: 'SECONDS')
-                    }
-                }
+                bat 'cd PracticaJenkins\dist\PracticaJenkins'
+		bat 'java -jar PracticaJenkins.jar'
+		bat 'echo "kill yourself"'
             }
         }
     }

@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Incrementar cada minuto') {
+            steps {
+                script {
+                    // Inicializa una variable para contar.
+                    def count = 0
+
+                    // Ejecuta un bucle infinito.
+                    while (true) {
+                        // Incrementa el contador en 1.
+                        count++
+                        
+                        // Imprime el número actual.
+                        echo "Número: $count"
+                        echo "bomba"
+                        // Espera 1 minuto antes de la próxima iteración.
+                        sleep(time: 60, unit: 'SECONDS')
+                    }
+                }
+            }
+        }
+    }
+}
